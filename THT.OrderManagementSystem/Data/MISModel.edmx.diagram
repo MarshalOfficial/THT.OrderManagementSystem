@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6901da3542c64875b6a420747d07378d" Name="Diagram1">
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.ActionTypes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.BrandBank" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.InvDetails" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.InvHeader" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.LocationLogs" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.ProductPictures" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.ProductPicturesDevice" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.ShopScan" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.WebServiceLog" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.Customer" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.Products" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.Sale" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.Visitor" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.Users" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.VisitLog" Width="1.5" PointX="5.375" PointY="11.75" />
+        <EntityTypeShape EntityType="PTC_MIS_DBModel.DeviceMap" Width="1.5" PointX="11.375" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1024 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PTC_MIS_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="User_Name" Type="varchar" MaxLength="30" />
+          <Property Name="User_Password" Type="varchar" MaxLength="50" />
+          <Property Name="User_Level" Type="tinyint" />
+          <Property Name="Defualt_Part_Code" Type="varchar" MaxLength="50" />
+          <Property Name="PartitionCode" Type="smallint" />
+          <Property Name="AccStep" Type="smallint" />
+          <Property Name="AnbCode" Type="int" Nullable="false" />
+          <Property Name="CashID" Type="int" Nullable="false" />
+          <Property Name="MngSailCode" Type="int" Nullable="false" />
+          <Property Name="Emp_Code" Type="varchar" MaxLength="20" />
+          <Property Name="AcounterCode" Type="int" Nullable="false" />
+          <Property Name="PartCode" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="VisitorCode" Type="smallint" />
+          <Property Name="DepID" Type="int" />
+          <Property Name="MagnetCardNo" Type="varchar" MaxLength="16" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="TimeStampID" Type="bigint" />
+          <Property Name="TimeStampCode" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="ChangeTSCenter" Type="varbinary" MaxLength="50" />
+          <Property Name="GUserID" Type="int" />
+          <Property Name="IsChanged" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="ChangeTSCnter" Type="varbinary" MaxLength="50" />
+          <Property Name="MobileNumber" Type="varchar" MaxLength="11" />
+          <Property Name="createdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActionTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="BrandBank">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="150" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DeviceMap">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Value" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="VisitorCode" Type="smallint" />
+          <Property Name="MapColor" Type="varchar" MaxLength="100" />
+          <Property Name="TargetValue" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue1" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue2" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue3" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue4" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue5" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue6" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue7" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue8" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue9" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue10" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue11" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="VisitLogCountTarget" Type="int" />
+          <Property Name="VisitLogCountTarget1" Type="int" />
+          <Property Name="VisitLogCountTarget2" Type="int" />
+          <Property Name="VisitLogCountTarget3" Type="int" />
+          <Property Name="VisitLogCountTarget4" Type="int" />
+          <Property Name="VisitLogCountTarget5" Type="int" />
+          <Property Name="VisitLogCountTarget6" Type="int" />
+          <Property Name="VisitLogCountTarget7" Type="int" />
+          <Property Name="VisitLogCountTarget8" Type="int" />
+          <Property Name="VisitLogCountTarget9" Type="int" />
+          <Property Name="VisitLogCountTarget10" Type="int" />
+          <Property Name="VisitLogCountTarget11" Type="int" />
+        </EntityType>
+        <EntityType Name="InvDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PInvID" Type="int" />
+          <Property Name="PInv_Code" Type="varchar" MaxLength="500" />
+          <Property Name="BarCode" Type="varchar" MaxLength="20" />
+          <Property Name="K_Code" Type="varchar" MaxLength="50" />
+          <Property Name="K_Name" Type="varchar" MaxLength="250" />
+          <Property Name="PK_Amount" Type="float" />
+          <Property Name="K_Price" Type="money" />
+          <Property Name="Reduction_p" Type="float" />
+          <Property Name="Row_Multi" Type="money" />
+          <Property Name="ExtantDetails" Type="money" />
+          <Property Name="Memo" Type="varchar" MaxLength="50" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="PCompanyID" Type="smallint" />
+          <Property Name="PBarCodeID" Type="int" />
+          <Property Name="RowReduction" Type="money" />
+          <Property Name="RowID" Type="int" />
+          <Property Name="UnitID" Type="int" />
+          <Property Name="PCsPerUnit" Type="float" />
+          <Property Name="K_Price_Marjo" Type="money" />
+          <Property Name="OldPriceMarjo" Type="money" />
+        </EntityType>
+        <EntityType Name="InvHeader">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PInv_Code" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="PInvID" Type="int" />
+          <Property Name="THesabcode" Type="varchar" MaxLength="17" />
+          <Property Name="THesabName" Type="varchar" MaxLength="250" />
+          <Property Name="invmode" Type="smallint" />
+          <Property Name="InvMemo" Type="text" />
+          <Property Name="VisitorCode" Type="smallint" />
+          <Property Name="InputPInvDate" Type="varchar" MaxLength="250" />
+          <Property Name="InputUserName" Type="varchar" MaxLength="250" />
+          <Property Name="VisitOrderSaveDate" Type="datetime" />
+          <Property Name="DueKind" Type="smallint" />
+          <Property Name="IsSended" Type="bit" />
+        </EntityType>
+        <EntityType Name="LocationLogs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VisitorCode" Type="int" />
+          <Property Name="SaveTime" Type="varchar" MaxLength="150" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Latitude" Type="varchar" MaxLength="100" />
+          <Property Name="Longitude" Type="varchar" MaxLength="100" />
+          <Property Name="ActionID" Type="int" />
+          <Property Name="Memo" Type="varchar" MaxLength="2000" />
+          <Property Name="IsSended" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductPictures">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ERPCode" Type="nvarchar" MaxLength="200" />
+          <Property Name="Picture" Type="varbinary(max)" />
+          <Property Name="RootERPCode" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ProductPicturesDevice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ERPCode" Type="nvarchar" MaxLength="200" />
+          <Property Name="Picture" Type="varbinary(max)" />
+          <Property Name="RootERPCode" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ShopScan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="varchar(max)" />
+          <Property Name="Tel" Type="varchar" MaxLength="250" />
+          <Property Name="Memo" Type="varchar(max)" />
+          <Property Name="WorkingBrands" Type="varchar(max)" />
+          <Property Name="VisitorCode" Type="int" />
+          <Property Name="SaveTime" Type="varchar" MaxLength="150" />
+          <Property Name="Latitude" Type="varchar" MaxLength="100" />
+          <Property Name="Longitude" Type="varchar" MaxLength="100" />
+          <Property Name="AgentVisitorCode" Type="int" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VisitLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="THesabCode" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="VisitorCode" Type="int" Nullable="false" />
+          <Property Name="ResultID" Type="int" />
+          <Property Name="SaveTime" Type="varchar" MaxLength="150" />
+          <Property Name="Latitude" Type="varchar" MaxLength="150" />
+          <Property Name="Longitude" Type="varchar" MaxLength="150" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Memo" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="WebServiceLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User" Type="nvarchar" MaxLength="200" />
+          <Property Name="Memo" Type="nvarchar" MaxLength="500" />
+          <Property Name="SaveDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PTC_MIS_DB.TOrder.Customer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="THesabcode" />
+            <PropertyRef Name="Tel" />
+            <PropertyRef Name="MobileNum" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="ThMandeh" />
+            <PropertyRef Name="Province" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="PhoneNum" />
+            <PropertyRef Name="SearchField" />
+            <PropertyRef Name="T_Hesan_Extant" />
+          </Key>
+          <Property Name="THesabcode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TName" Type="varchar" MaxLength="100" />
+          <Property Name="Tel" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MobileNum" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="ThMandeh" Type="money" Nullable="false" />
+          <Property Name="Province" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNum" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SearchField" Type="varchar" MaxLength="448" Nullable="false" />
+          <Property Name="T_Hesan_Extant" Type="money" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PTC_MIS_DB.TOrder.Products' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="BrandERPCode" />
+            <PropertyRef Name="KArtNo" />
+            <PropertyRef Name="KBarCode" />
+            <PropertyRef Name="K_Name" />
+            <PropertyRef Name="K_price_sail" />
+            <PropertyRef Name="K_price_sail2" />
+            <PropertyRef Name="K_price_sail3" />
+            <PropertyRef Name="EndUserPrice" />
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="PcompanyID" />
+            <PropertyRef Name="PBarCodeID" />
+            <PropertyRef Name="Mojodi" />
+          </Key>
+          <Property Name="ERPCode" Type="varchar" MaxLength="92" />
+          <Property Name="BrandERPCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="KArtNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="KBarCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="K_Name" Type="varchar" MaxLength="356" Nullable="false" />
+          <Property Name="K_price_sail" Type="money" Nullable="false" />
+          <Property Name="K_price_sail2" Type="money" Nullable="false" />
+          <Property Name="K_price_sail3" Type="money" Nullable="false" />
+          <Property Name="EndUserPrice" Type="money" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="PcompanyID" Type="int" Nullable="false" />
+          <Property Name="PBarCodeID" Type="int" Nullable="false" />
+          <Property Name="vat" Type="float" />
+          <Property Name="Mojodi" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PTC_MIS_DB.TOrder.Sale' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="FactNumber" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="VisitorName" />
+            <PropertyRef Name="OrderCount" />
+            <PropertyRef Name="Offer" />
+            <PropertyRef Name="Memo" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="ReserveField" />
+          </Key>
+          <Property Name="FactNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CusCode" Type="varchar" MaxLength="17" />
+          <Property Name="CusName" Type="varchar" MaxLength="100" />
+          <Property Name="FactDate" Type="varchar" MaxLength="8" />
+          <Property Name="OrderDate" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="VisitorCode" Type="smallint" />
+          <Property Name="VisitorName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="InvMode" Type="smallint" />
+          <Property Name="K_Name" Type="varchar" MaxLength="250" />
+          <Property Name="OrderCount" Type="float" Nullable="false" />
+          <Property Name="FactCount" Type="float" />
+          <Property Name="KalaPrice" Type="money" />
+          <Property Name="Reduction" Type="float" />
+          <Property Name="RowPrice" Type="money" />
+          <Property Name="RowRemain" Type="money" />
+          <Property Name="FactReduction" Type="money" />
+          <Property Name="Offer" Type="int" Nullable="false" />
+          <Property Name="Memo" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ReserveField" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PTC_MIS_DB.TOrder.Visitor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Visitor">
+          <Key>
+            <PropertyRef Name="Visitor_Code" />
+            <PropertyRef Name="MobileNo" />
+            <PropertyRef Name="PocketPassword" />
+          </Key>
+          <Property Name="Visitor_Code" Type="smallint" Nullable="false" />
+          <Property Name="Visitor_Name" Type="varchar" MaxLength="30" />
+          <Property Name="MobileNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PocketPassword" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PTC_MIS_DBModelStoreContainer">
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ActionTypes" EntityType="Self.ActionTypes" Schema="TOrder" store:Type="Tables" />
+          <EntitySet Name="BrandBank" EntityType="Self.BrandBank" Schema="TOrder" store:Type="Tables" />
+          <EntitySet Name="DeviceMap" EntityType="Self.DeviceMap" Schema="TOrder" store:Type="Tables" />
+          <EntitySet Name="InvDetails" EntityType="Self.InvDetails" Schema="TOrder" store:Type="Tables" />
+          <EntitySet Name="InvHeader" EntityType="Self.InvHeader" Schema="TOrder" store:Type="Tables" />
+          <EntitySet Name="LocationLogs" EntityType="Self.LocationLogs" Schema="TOrder" store:Type="Tables" />
+          <EntitySet Name="ProductPictures" EntityType="Self.ProductPictures" Schema="TOrder" store:Type="Tables" />
+          <EntitySet Name="ProductPicturesDevice" EntityType="Self.ProductPicturesDevice" Schema="TOrder" store:Type="Tables" />
+          <EntitySet Name="ShopScan" EntityType="Self.ShopScan" Schema="TOrder" store:Type="Tables" />
+          <EntitySet Name="VisitLog" EntityType="Self.VisitLog" Schema="TOrder" store:Type="Tables" />
+          <EntitySet Name="WebServiceLog" EntityType="Self.WebServiceLog" Schema="TOrder" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" store:Type="Views" store:Schema="TOrder">
+            <DefiningQuery>SELECT 
+    [Customer].[THesabcode] AS [THesabcode], 
+    [Customer].[TName] AS [TName], 
+    [Customer].[Tel] AS [Tel], 
+    [Customer].[MobileNum] AS [MobileNum], 
+    [Customer].[Address] AS [Address], 
+    [Customer].[ThMandeh] AS [ThMandeh], 
+    [Customer].[Province] AS [Province], 
+    [Customer].[City] AS [City], 
+    [Customer].[FirstName] AS [FirstName], 
+    [Customer].[PhoneNum] AS [PhoneNum], 
+    [Customer].[SearchField] AS [SearchField], 
+    [Customer].[T_Hesan_Extant] AS [T_Hesan_Extant]
+    FROM [TOrder].[Customer] AS [Customer]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Products" EntityType="Self.Products" store:Type="Views" store:Schema="TOrder">
+            <DefiningQuery>SELECT 
+    [Products].[ERPCode] AS [ERPCode], 
+    [Products].[BrandERPCode] AS [BrandERPCode], 
+    [Products].[KArtNo] AS [KArtNo], 
+    [Products].[KBarCode] AS [KBarCode], 
+    [Products].[K_Name] AS [K_Name], 
+    [Products].[K_price_sail] AS [K_price_sail], 
+    [Products].[K_price_sail2] AS [K_price_sail2], 
+    [Products].[K_price_sail3] AS [K_price_sail3], 
+    [Products].[EndUserPrice] AS [EndUserPrice], 
+    [Products].[ProductID] AS [ProductID], 
+    [Products].[PcompanyID] AS [PcompanyID], 
+    [Products].[PBarCodeID] AS [PBarCodeID], 
+    [Products].[vat] AS [vat], 
+    [Products].[Mojodi] AS [Mojodi]
+    FROM [TOrder].[Products] AS [Products]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Sale" EntityType="Self.Sale" store:Type="Views" store:Schema="TOrder">
+            <DefiningQuery>SELECT 
+    [Sale].[FactNumber] AS [FactNumber], 
+    [Sale].[CusCode] AS [CusCode], 
+    [Sale].[CusName] AS [CusName], 
+    [Sale].[FactDate] AS [FactDate], 
+    [Sale].[OrderDate] AS [OrderDate], 
+    [Sale].[VisitorCode] AS [VisitorCode], 
+    [Sale].[VisitorName] AS [VisitorName], 
+    [Sale].[InvMode] AS [InvMode], 
+    [Sale].[K_Name] AS [K_Name], 
+    [Sale].[OrderCount] AS [OrderCount], 
+    [Sale].[FactCount] AS [FactCount], 
+    [Sale].[KalaPrice] AS [KalaPrice], 
+    [Sale].[Reduction] AS [Reduction], 
+    [Sale].[RowPrice] AS [RowPrice], 
+    [Sale].[RowRemain] AS [RowRemain], 
+    [Sale].[FactReduction] AS [FactReduction], 
+    [Sale].[Offer] AS [Offer], 
+    [Sale].[Memo] AS [Memo], 
+    [Sale].[Description] AS [Description], 
+    [Sale].[ReserveField] AS [ReserveField]
+    FROM [TOrder].[Sale] AS [Sale]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Visitor" EntityType="Self.Visitor" store:Type="Views" store:Schema="TOrder">
+            <DefiningQuery>SELECT 
+    [Visitor].[Visitor_Code] AS [Visitor_Code], 
+    [Visitor].[Visitor_Name] AS [Visitor_Name], 
+    [Visitor].[MobileNo] AS [MobileNo], 
+    [Visitor].[PocketPassword] AS [PocketPassword]
+    FROM [TOrder].[Visitor] AS [Visitor]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PTC_MIS_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ActionTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BrandBank">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="InvDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PInvID" Type="Int32" />
+          <Property Name="PInv_Code" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="BarCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="K_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="K_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="PK_Amount" Type="Double" />
+          <Property Name="K_Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Reduction_p" Type="Double" />
+          <Property Name="Row_Multi" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ExtantDetails" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Memo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="PCompanyID" Type="Int16" />
+          <Property Name="PBarCodeID" Type="Int32" />
+          <Property Name="RowReduction" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="RowID" Type="Int32" />
+          <Property Name="UnitID" Type="Int32" />
+          <Property Name="PCsPerUnit" Type="Double" />
+          <Property Name="K_Price_Marjo" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="OldPriceMarjo" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="InvHeader">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PInv_Code" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PInvID" Type="Int32" />
+          <Property Name="THesabcode" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="THesabName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="invmode" Type="Int16" />
+          <Property Name="InvMemo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VisitorCode" Type="Int16" />
+          <Property Name="InputPInvDate" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="InputUserName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="VisitOrderSaveDate" Type="DateTime" Precision="3" />
+          <Property Name="IsSended" Type="Boolean" />
+          <Property Name="DueKind" Type="Int16" />
+        </EntityType>
+        <EntityType Name="LocationLogs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VisitorCode" Type="Int32" />
+          <Property Name="SaveTime" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Latitude" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Longitude" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ActionID" Type="Int32" />
+          <Property Name="Memo" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="IsSended" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductPictures">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ERPCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="RootERPCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProductPicturesDevice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ERPCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="RootERPCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ShopScan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tel" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WorkingBrands" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VisitorCode" Type="Int32" />
+          <Property Name="SaveTime" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Latitude" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Longitude" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AgentVisitorCode" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="WebServiceLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Memo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SaveDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="THesabcode" />
+            <PropertyRef Name="Tel" />
+            <PropertyRef Name="MobileNum" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="ThMandeh" />
+            <PropertyRef Name="Province" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="PhoneNum" />
+            <PropertyRef Name="SearchField" />
+            <PropertyRef Name="T_Hesan_Extant" />
+          </Key>
+          <Property Name="THesabcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MobileNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ThMandeh" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhoneNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SearchField" Type="String" MaxLength="448" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="T_Hesan_Extant" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="BrandERPCode" />
+            <PropertyRef Name="KArtNo" />
+            <PropertyRef Name="KBarCode" />
+            <PropertyRef Name="K_Name" />
+            <PropertyRef Name="K_price_sail" />
+            <PropertyRef Name="K_price_sail2" />
+            <PropertyRef Name="K_price_sail3" />
+            <PropertyRef Name="EndUserPrice" />
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="PcompanyID" />
+            <PropertyRef Name="PBarCodeID" />
+            <PropertyRef Name="Mojodi" />
+          </Key>
+          <Property Name="ERPCode" Type="String" MaxLength="92" FixedLength="false" Unicode="false" />
+          <Property Name="BrandERPCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KArtNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KBarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="K_Name" Type="String" MaxLength="356" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="K_price_sail" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="K_price_sail2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="K_price_sail3" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="EndUserPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="PcompanyID" Type="Int32" Nullable="false" />
+          <Property Name="PBarCodeID" Type="Int32" Nullable="false" />
+          <Property Name="vat" Type="Double" />
+          <Property Name="Mojodi" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="FactNumber" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="VisitorName" />
+            <PropertyRef Name="OrderCount" />
+            <PropertyRef Name="Offer" />
+            <PropertyRef Name="Memo" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="ReserveField" />
+          </Key>
+          <Property Name="FactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CusCode" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="CusName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FactDate" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="OrderDate" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VisitorCode" Type="Int16" />
+          <Property Name="VisitorName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InvMode" Type="Int16" />
+          <Property Name="K_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OrderCount" Type="Double" Nullable="false" />
+          <Property Name="FactCount" Type="Double" />
+          <Property Name="KalaPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Reduction" Type="Double" />
+          <Property Name="RowPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="RowRemain" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FactReduction" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Offer" Type="Int32" Nullable="false" />
+          <Property Name="Memo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ReserveField" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Visitor">
+          <Key>
+            <PropertyRef Name="Visitor_Code" />
+            <PropertyRef Name="MobileNo" />
+            <PropertyRef Name="PocketPassword" />
+          </Key>
+          <Property Name="Visitor_Code" Type="Int16" Nullable="false" />
+          <Property Name="Visitor_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PocketPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PTC_MIS_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ActionTypes" EntityType="Self.ActionTypes" />
+          <EntitySet Name="BrandBank" EntityType="Self.BrandBank" />
+          <EntitySet Name="InvDetails" EntityType="Self.InvDetails" />
+          <EntitySet Name="InvHeader" EntityType="Self.InvHeader" />
+          <EntitySet Name="LocationLogs" EntityType="Self.LocationLogs" />
+          <EntitySet Name="ProductPictures" EntityType="Self.ProductPictures" />
+          <EntitySet Name="ProductPicturesDevice" EntityType="Self.ProductPicturesDevice" />
+          <EntitySet Name="ShopScan" EntityType="Self.ShopScan" />
+          <EntitySet Name="WebServiceLog" EntityType="Self.WebServiceLog" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" />
+          <EntitySet Name="Products" EntityType="Self.Products" />
+          <EntitySet Name="Sale" EntityType="Self.Sale" />
+          <EntitySet Name="Visitor" EntityType="Self.Visitor" />
+          <EntitySet Name="Users" EntityType="PTC_MIS_DBModel.Users" />
+          <EntitySet Name="VisitLog" EntityType="PTC_MIS_DBModel.VisitLog" />
+          <EntitySet Name="DeviceMap" EntityType="PTC_MIS_DBModel.DeviceMap" />
+        </EntityContainer>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <Property Name="User_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="User_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Level" Type="Byte" />
+          <Property Name="Defualt_Part_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PartitionCode" Type="Int16" />
+          <Property Name="AccStep" Type="Int16" />
+          <Property Name="AnbCode" Type="Int32" Nullable="false" />
+          <Property Name="CashID" Type="Int32" Nullable="false" />
+          <Property Name="MngSailCode" Type="Int32" Nullable="false" />
+          <Property Name="Emp_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AcounterCode" Type="Int32" Nullable="false" />
+          <Property Name="PartCode" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="VisitorCode" Type="Int16" />
+          <Property Name="DepID" Type="Int32" />
+          <Property Name="MagnetCardNo" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TimeStampID" Type="Int64" />
+          <Property Name="TimeStampCode" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ChangeTSCenter" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="GUserID" Type="Int32" />
+          <Property Name="IsChanged" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="ChangeTSCnter" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="MobileNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="VisitLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="THesabCode" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="VisitorCode" Type="Int32" Nullable="false" />
+          <Property Name="SaveTime" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Latitude" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Longitude" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ResultID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DeviceMap">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VisitorCode" Type="Int16" />
+          <Property Name="MapColor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TargetValue" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue1" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue2" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue3" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue4" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue5" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue6" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue7" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue8" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue9" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue10" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="TargetValue11" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="VisitLogCountTarget" Type="Int32" />
+          <Property Name="VisitLogCountTarget1" Type="Int32" />
+          <Property Name="VisitLogCountTarget2" Type="Int32" />
+          <Property Name="VisitLogCountTarget3" Type="Int32" />
+          <Property Name="VisitLogCountTarget4" Type="Int32" />
+          <Property Name="VisitLogCountTarget5" Type="Int32" />
+          <Property Name="VisitLogCountTarget6" Type="Int32" />
+          <Property Name="VisitLogCountTarget7" Type="Int32" />
+          <Property Name="VisitLogCountTarget8" Type="Int32" />
+          <Property Name="VisitLogCountTarget9" Type="Int32" />
+          <Property Name="VisitLogCountTarget10" Type="Int32" />
+          <Property Name="VisitLogCountTarget11" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PTC_MIS_DBModelStoreContainer" CdmEntityContainer="PTC_MIS_DBEntities">
+          <EntitySetMapping Name="ActionTypes">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.ActionTypes">
+              <MappingFragment StoreEntitySet="ActionTypes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BrandBank">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.BrandBank">
+              <MappingFragment StoreEntitySet="BrandBank">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvDetails">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.InvDetails">
+              <MappingFragment StoreEntitySet="InvDetails">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PInvID" ColumnName="PInvID" />
+                <ScalarProperty Name="PInv_Code" ColumnName="PInv_Code" />
+                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+                <ScalarProperty Name="K_Code" ColumnName="K_Code" />
+                <ScalarProperty Name="K_Name" ColumnName="K_Name" />
+                <ScalarProperty Name="PK_Amount" ColumnName="PK_Amount" />
+                <ScalarProperty Name="K_Price" ColumnName="K_Price" />
+                <ScalarProperty Name="Reduction_p" ColumnName="Reduction_p" />
+                <ScalarProperty Name="Row_Multi" ColumnName="Row_Multi" />
+                <ScalarProperty Name="ExtantDetails" ColumnName="ExtantDetails" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="PCompanyID" ColumnName="PCompanyID" />
+                <ScalarProperty Name="PBarCodeID" ColumnName="PBarCodeID" />
+                <ScalarProperty Name="RowReduction" ColumnName="RowReduction" />
+                <ScalarProperty Name="RowID" ColumnName="RowID" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="PCsPerUnit" ColumnName="PCsPerUnit" />
+                <ScalarProperty Name="K_Price_Marjo" ColumnName="K_Price_Marjo" />
+                <ScalarProperty Name="OldPriceMarjo" ColumnName="OldPriceMarjo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvHeader">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.InvHeader">
+              <MappingFragment StoreEntitySet="InvHeader">
+                <ScalarProperty Name="DueKind" ColumnName="DueKind" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PInv_Code" ColumnName="PInv_Code" />
+                <ScalarProperty Name="PInvID" ColumnName="PInvID" />
+                <ScalarProperty Name="THesabcode" ColumnName="THesabcode" />
+                <ScalarProperty Name="THesabName" ColumnName="THesabName" />
+                <ScalarProperty Name="invmode" ColumnName="invmode" />
+                <ScalarProperty Name="InvMemo" ColumnName="InvMemo" />
+                <ScalarProperty Name="VisitorCode" ColumnName="VisitorCode" />
+                <ScalarProperty Name="InputPInvDate" ColumnName="InputPInvDate" />
+                <ScalarProperty Name="InputUserName" ColumnName="InputUserName" />
+                <ScalarProperty Name="VisitOrderSaveDate" ColumnName="VisitOrderSaveDate" />
+                <ScalarProperty Name="IsSended" ColumnName="IsSended" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocationLogs">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.LocationLogs">
+              <MappingFragment StoreEntitySet="LocationLogs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VisitorCode" ColumnName="VisitorCode" />
+                <ScalarProperty Name="SaveTime" ColumnName="SaveTime" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="ActionID" ColumnName="ActionID" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="IsSended" ColumnName="IsSended" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductPictures">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.ProductPictures">
+              <MappingFragment StoreEntitySet="ProductPictures">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ERPCode" ColumnName="ERPCode" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="RootERPCode" ColumnName="RootERPCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductPicturesDevice">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.ProductPicturesDevice">
+              <MappingFragment StoreEntitySet="ProductPicturesDevice">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ERPCode" ColumnName="ERPCode" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="RootERPCode" ColumnName="RootERPCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShopScan">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.ShopScan">
+              <MappingFragment StoreEntitySet="ShopScan">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="WorkingBrands" ColumnName="WorkingBrands" />
+                <ScalarProperty Name="VisitorCode" ColumnName="VisitorCode" />
+                <ScalarProperty Name="SaveTime" ColumnName="SaveTime" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="AgentVisitorCode" ColumnName="AgentVisitorCode" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebServiceLog">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.WebServiceLog">
+              <MappingFragment StoreEntitySet="WebServiceLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="SaveDate" ColumnName="SaveDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="THesabcode" ColumnName="THesabcode" />
+                <ScalarProperty Name="TName" ColumnName="TName" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="MobileNum" ColumnName="MobileNum" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ThMandeh" ColumnName="ThMandeh" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+                <ScalarProperty Name="SearchField" ColumnName="SearchField" />
+                <ScalarProperty Name="T_Hesan_Extant" ColumnName="T_Hesan_Extant" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ERPCode" ColumnName="ERPCode" />
+                <ScalarProperty Name="BrandERPCode" ColumnName="BrandERPCode" />
+                <ScalarProperty Name="KArtNo" ColumnName="KArtNo" />
+                <ScalarProperty Name="KBarCode" ColumnName="KBarCode" />
+                <ScalarProperty Name="K_Name" ColumnName="K_Name" />
+                <ScalarProperty Name="K_price_sail" ColumnName="K_price_sail" />
+                <ScalarProperty Name="K_price_sail2" ColumnName="K_price_sail2" />
+                <ScalarProperty Name="K_price_sail3" ColumnName="K_price_sail3" />
+                <ScalarProperty Name="EndUserPrice" ColumnName="EndUserPrice" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="PcompanyID" ColumnName="PcompanyID" />
+                <ScalarProperty Name="PBarCodeID" ColumnName="PBarCodeID" />
+                <ScalarProperty Name="vat" ColumnName="vat" />
+                <ScalarProperty Name="Mojodi" ColumnName="Mojodi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sale">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.Sale">
+              <MappingFragment StoreEntitySet="Sale">
+                <ScalarProperty Name="FactNumber" ColumnName="FactNumber" />
+                <ScalarProperty Name="CusCode" ColumnName="CusCode" />
+                <ScalarProperty Name="CusName" ColumnName="CusName" />
+                <ScalarProperty Name="FactDate" ColumnName="FactDate" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="VisitorCode" ColumnName="VisitorCode" />
+                <ScalarProperty Name="VisitorName" ColumnName="VisitorName" />
+                <ScalarProperty Name="InvMode" ColumnName="InvMode" />
+                <ScalarProperty Name="K_Name" ColumnName="K_Name" />
+                <ScalarProperty Name="OrderCount" ColumnName="OrderCount" />
+                <ScalarProperty Name="FactCount" ColumnName="FactCount" />
+                <ScalarProperty Name="KalaPrice" ColumnName="KalaPrice" />
+                <ScalarProperty Name="Reduction" ColumnName="Reduction" />
+                <ScalarProperty Name="RowPrice" ColumnName="RowPrice" />
+                <ScalarProperty Name="RowRemain" ColumnName="RowRemain" />
+                <ScalarProperty Name="FactReduction" ColumnName="FactReduction" />
+                <ScalarProperty Name="Offer" ColumnName="Offer" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ReserveField" ColumnName="ReserveField" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Visitor">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.Visitor">
+              <MappingFragment StoreEntitySet="Visitor">
+                <ScalarProperty Name="Visitor_Code" ColumnName="Visitor_Code" />
+                <ScalarProperty Name="Visitor_Name" ColumnName="Visitor_Name" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="PocketPassword" ColumnName="PocketPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="createdate" ColumnName="createdate" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="ChangeTSCnter" ColumnName="ChangeTSCnter" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsChanged" ColumnName="IsChanged" />
+                <ScalarProperty Name="GUserID" ColumnName="GUserID" />
+                <ScalarProperty Name="ChangeTSCenter" ColumnName="ChangeTSCenter" />
+                <ScalarProperty Name="TimeStampCode" ColumnName="TimeStampCode" />
+                <ScalarProperty Name="TimeStampID" ColumnName="TimeStampID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MagnetCardNo" ColumnName="MagnetCardNo" />
+                <ScalarProperty Name="DepID" ColumnName="DepID" />
+                <ScalarProperty Name="VisitorCode" ColumnName="VisitorCode" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="PartCode" ColumnName="PartCode" />
+                <ScalarProperty Name="AcounterCode" ColumnName="AcounterCode" />
+                <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+                <ScalarProperty Name="MngSailCode" ColumnName="MngSailCode" />
+                <ScalarProperty Name="CashID" ColumnName="CashID" />
+                <ScalarProperty Name="AnbCode" ColumnName="AnbCode" />
+                <ScalarProperty Name="AccStep" ColumnName="AccStep" />
+                <ScalarProperty Name="PartitionCode" ColumnName="PartitionCode" />
+                <ScalarProperty Name="Defualt_Part_Code" ColumnName="Defualt_Part_Code" />
+                <ScalarProperty Name="User_Level" ColumnName="User_Level" />
+                <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VisitLog">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.VisitLog">
+              <MappingFragment StoreEntitySet="VisitLog">
+                <ScalarProperty Name="ResultID" ColumnName="ResultID" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="SaveTime" ColumnName="SaveTime" />
+                <ScalarProperty Name="VisitorCode" ColumnName="VisitorCode" />
+                <ScalarProperty Name="THesabCode" ColumnName="THesabCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeviceMap">
+            <EntityTypeMapping TypeName="PTC_MIS_DBModel.DeviceMap">
+              <MappingFragment StoreEntitySet="DeviceMap">
+                <ScalarProperty Name="VisitLogCountTarget11" ColumnName="VisitLogCountTarget11" />
+                <ScalarProperty Name="VisitLogCountTarget10" ColumnName="VisitLogCountTarget10" />
+                <ScalarProperty Name="VisitLogCountTarget9" ColumnName="VisitLogCountTarget9" />
+                <ScalarProperty Name="VisitLogCountTarget8" ColumnName="VisitLogCountTarget8" />
+                <ScalarProperty Name="VisitLogCountTarget7" ColumnName="VisitLogCountTarget7" />
+                <ScalarProperty Name="VisitLogCountTarget6" ColumnName="VisitLogCountTarget6" />
+                <ScalarProperty Name="VisitLogCountTarget5" ColumnName="VisitLogCountTarget5" />
+                <ScalarProperty Name="VisitLogCountTarget4" ColumnName="VisitLogCountTarget4" />
+                <ScalarProperty Name="VisitLogCountTarget3" ColumnName="VisitLogCountTarget3" />
+                <ScalarProperty Name="VisitLogCountTarget2" ColumnName="VisitLogCountTarget2" />
+                <ScalarProperty Name="VisitLogCountTarget1" ColumnName="VisitLogCountTarget1" />
+                <ScalarProperty Name="VisitLogCountTarget" ColumnName="VisitLogCountTarget" />
+                <ScalarProperty Name="TargetValue11" ColumnName="TargetValue11" />
+                <ScalarProperty Name="TargetValue10" ColumnName="TargetValue10" />
+                <ScalarProperty Name="TargetValue9" ColumnName="TargetValue9" />
+                <ScalarProperty Name="TargetValue8" ColumnName="TargetValue8" />
+                <ScalarProperty Name="TargetValue7" ColumnName="TargetValue7" />
+                <ScalarProperty Name="TargetValue6" ColumnName="TargetValue6" />
+                <ScalarProperty Name="TargetValue5" ColumnName="TargetValue5" />
+                <ScalarProperty Name="TargetValue4" ColumnName="TargetValue4" />
+                <ScalarProperty Name="TargetValue3" ColumnName="TargetValue3" />
+                <ScalarProperty Name="TargetValue2" ColumnName="TargetValue2" />
+                <ScalarProperty Name="TargetValue1" ColumnName="TargetValue1" />
+                <ScalarProperty Name="TargetValue" ColumnName="TargetValue" />
+                <ScalarProperty Name="MapColor" ColumnName="MapColor" />
+                <ScalarProperty Name="VisitorCode" ColumnName="VisitorCode" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
